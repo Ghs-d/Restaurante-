@@ -1,4 +1,4 @@
-# Baiano restaurant
+# Baian restaurant
 
 <img src="exemplo.jpeg" alt="Exemplo imagem">
 
