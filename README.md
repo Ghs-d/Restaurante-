@@ -1,6 +1,6 @@
 # Baiano restaurant
 
-<img src="exemplo.png" alt="Exemplo imagem">
+<img src="exemplo.jpeg" alt="Exemplo imagem">
 
 ## 📋 Overview
 
