@@ -1,0 +1,484 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --amarelo: #FDB927;
+    --escuro: #3E2312;
+    --fundo: #FEF9F1;
+    --input-bg: #F6EFE5;
+    --zap: #25D366;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+header {
+    background: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container-header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.logo i {
+    background: var(--amarelo);
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #3E2312;
+}
+
+.texto-logo span:last-child {
+    color: var(--amarelo);
+    font-size: 1.3rem;
+    -webkit-text-stroke: 0.5px #333;
+}
+
+nav a {
+    text-decoration: none;
+    color: #666;
+    margin-left: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+nav a.ativo {
+    color: var(--amarelo);
+    border-bottom: 2px solid var(--amarelo);
+}
+
+.banner {
+    background: #fa8e01;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+}
+
+h1 {
+    -webkit-text-stroke: 0.5px #6e6e6d;
+    color: #ffffff;
+}
+
+.menu {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu h2 {
+    margin-top: 30px;
+    color: #333;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* =========================================
+   CARDS DE PRODUTO
+   ========================================= */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+    transition: transform 0.3s ease;
+
+    /* Transformamos o card em uma coluna flexível */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Faz o card ocupar toda a altura disponível no grid */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 10px 5px;
+    color: #333;
+}
+
+.card p {
+    margin: 0 10px 10px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.preco {
+    margin: 10px;
+    color: #d35400 !important;
+    font-weight: bold;
+    font-size: 1.2rem !important;
+}
+
+
+.adicionar {
+    background-color: #d97706;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+
+    /* O "margin-top: auto" empurra o botão para o limite inferior do card */
+    margin-top: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.adicionar:hover {
+    background-color: #b45309;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 10px 5px;
+    color: #333;
+}
+
+.card p {
+    margin: 0 10px 10px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.preco {
+    margin: 10px;
+    color: #d35400 !important;
+    font-weight: bold;
+    font-size: 1.2rem !important;
+}
+
+footer {
+    background: var(--escuro);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 6px solid var(--amarelo);
+}
+
+footer .redes {
+    margin: 15px 0;
+}
+
+footer .redes a {
+    color: var(--amarelo);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+/* =========================================
+   BOTÕES DOS CARDS DE PRODUTO
+   ========================================= */
+.adicionar {
+    background-color: #d97706;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.adicionar:hover {
+    background-color: #b45309;
+}
+
+.carrinho {
+    background: #fff7ed;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 800px;
+    /* Limita a largura para ficar mais elegante */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Alinha o ícone com o título do carrinho */
+.carrinho h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+    border-bottom: 2px solid var(--amarelo);
+    padding-bottom: 10px;
+}
+
+#lista-carrinho {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+/* Deixa a lista de itens flexível, empurrando lixeira e preço para o canto */
+#lista-carrinho li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Ocupa o espaço vazio no meio e destaca o nome */
+.item-nome {
+    flex-grow: 1;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Afasta um pouco o preço da lixeira */
+.item-preco {
+    margin-right: 15px;
+    font-weight: bold;
+    color: #d35400;
+}
+
+/* Tira o fundo do botão remover e deixa a lixeira vermelha */
+.remover {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 5px;
+}
+
+.remover:hover {
+    color: #c0392b;
+    transform: scale(1.1);
+    /* Dá um leve zoom ao passar o mouse */
+}
+
+.carrinho h3 {
+    text-align: right;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Moderniza o botão de compra, centralizando o texto e o ícone */
+#comprar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    color: white;
+    background-color: var(--zap);
+    /* Usa a sua variável do verde do WhatsApp */
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#comprar:hover {
+    background-color: #1ebd5a;
+    /* Tom de verde mais escuro no hover */
+}
+
+#mensagem {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+
+/*Botao de perfil */
+#menu-perfil {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* Respiro elegante entre o ícone e o texto */
+    background: #fff;
+    /* Fundo claro para não brigar com o menu */
+    color: var(--escuro);
+    border: 2px solid var(--amarelo);
+    /* Borda amarela mantém a identidade */
+    padding: 6px 16px;
+    border-radius: 50px;
+    /* Formato pílula */
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Deixamos o ícone amarelo para dar um charme no fundo branco */
+#menu-perfil i {
+    font-size: 1rem;
+    color: var(--amarelo);
+    transition: color 0.3s ease;
+}
+
+/* Efeito Hover: O botão preenche de amarelo e o texto/ícone ficam escuros */
+#menu-perfil:hover {
+    background: var(--amarelo);
+    color: var(--escuro);
+    box-shadow: 0 4px 12px rgba(253, 185, 39, 0.3);
+    transform: translateY(-2px);
+}
+
+#menu-perfil:hover i {
+    color: var(--escuro);
+}
+
+
+/* MODAL DE CADASTRO */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.popup-conteudo {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+.fechar {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #666;
+}
+
+.popup-conteudo input,
+.popup-conteudo textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.popup-conteudo button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*  CARD DE PERFIL (EXIBIÇÃO) */
+.overlay-perfil {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+}
+
+.card-perfil {
+    display: none;
+    /* Mantém escondido */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 350px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+}
+
+.card-perfil img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--amarelo);
+    margin-bottom: 15px;
+}
+
+.card-perfil h2 {
+    font-size: 28px;
+    color: var(--escuro);
+    margin-bottom: 10px;
+}
+
+.card-perfil p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #444;
+}

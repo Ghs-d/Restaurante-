@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor da Bahia - Agendamento e Delivery</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fa-solid fa-bowl-rice"></i>
+                <div>
+                    <span style="display:block; font-size:0.8rem; color:#333;">Sabor da</span>
+                    <span>Bahia</span>
+                </div>
+            </div>
+
+            <nav>
+                <a href="/restaurante.html">Início</a>
+                <a href="/cardapio.html">Cardápio</a>
+                <a href="/agendamento.html" class="ativo">Pedido / Agendamento</a>
+                <a href="#" id="menu-perfil" onclick="abrirPerfilOuCard()">
+                    <i class="fa-solid fa-user"></i> <span id="texto-menu-perfil">Perfil</span>
+                </a>
+            </nav>
+
+            <div class="popup" id="popup">
+                <div class="popup-conteudo">
+                    <span class="fechar" onclick="fecharPerfil()">&times;</span>
+                    <h1>Cadastro Social</h1>
+                    <input type="text" id="nome" placeholder="Nome">
+                    <input type="text" id="telefone" placeholder="Telefone">
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="date" id="nascimento">
+                    <textarea id="bio" placeholder="Digite algo sobre você"></textarea>
+                    <input type="file" id="foto">
+                    <button onclick="criarPerfilCard()">Cadastrar</button>
+                </div>
+            </div>
+
+            <div class="overlay-perfil" id="overlayPerfil" onclick="fecharCardPerfil()"></div>
+
+            <div class="card-perfil" id="cardPerfil">
+                <span class="fechar" onclick="fecharCardPerfil()">&times;</span>
+                <img id="fotoPerfil" src="https://via.placeholder.com/130" alt="Foto">
+                <h2 id="nomePerfil"></h2>
+                <p id="telefonePerfil"></p>
+                <p id="emailPerfil"></p>
+                <p id="nascimentoPerfil"></p>
+                <p id="bioPerfil"></p>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="mensagem">
+            <div>
+                <h1>Faça seu <br><span>Pedido ou</span> <br><span>Agendamento</span></h1>
+                <p>É rápido, fácil e delicioso!</p>
+            </div>
+            <div>
+                <img src="https://cdn.ibahia.com/wp-content/uploads/fileadmin/representativas/RTEmagicC_Comida_baiana_muqueca.jpg.jpg"
+                    alt="Comida Baiana">
+            </div>
+        </div>
+
+        <div class="card">
+            <input type="radio" id="deli" name="tipo" checked>
+            <input type="radio" id="agenda" name="tipo">
+
+            <div class="abas">
+                <label for="deli" class="deli"><i class="fas fa-motorcycle"></i> DELIVERY</label>
+                <label for="agenda" class="lbl-agen"><i class="far fa-calendar-alt"></i> AGENDAMENTO</label>
+            </div>
+
+            <form id="form-pedido" action="#">
+                <div class="grupo">
+                    <label>Nome Completo *</label>
+                    <input type="text" id="agenda-nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Telefone / WhatsApp *</label>
+                    <input type="tel" id="agenda-telefone" placeholder="(73) 328-555-0108" required>
+                </div>
+
+                <div class="grupo campo-delivery">
+                    <label>Endereço *</label>
+                    <input type="text" class="req-delivery" placeholder="Rua, número, Bairro, Cidade">
+                </div>
+
+                <div class="linha">
+                    <div class="grupo">
+                        <label>Data *</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="grupo">
+                        <label>Horário *</label>
+                        <input type="time" required>
+                    </div>
+                </div>
+
+                <div class="grupo campo-agendamento">
+                    <label>Quantidade de Pessoas *</label>
+                    <input type="number" class="req-agendamento" min="1" max="12" placeholder="Ex: 4 pessoas">
+                </div>
+
+                <div class="grupo campo-delivery">
+                    <label>Seu Pedido *</label>
+                    <textarea class="req-delivery" placeholder="Digite aqui os itens do seu pedido..."></textarea>
+                </div>
+
+                <div class="grupo">
+                    <label>Observações</label>
+                    <textarea placeholder="Alguma observação especial?"></textarea>
+                </div>
+
+                <button type="submit">ENVIAR PEDIDO <i class="fas fa-paper-plane"></i></button>
+            </form>
+
+            <div class="whatsapp">
+                <div>
+                    <i class="fab fa-whatsapp"></i>
+                    <p><b>OHH pai, Prefere pedir pelo WhatsApp?</b><br> <small>Mandeer mesangens aí pai</small></p>
+                </div>
+                <a href="https://www.youtube.com/@WhatsApp">CHAMAR NO WHATSAPP</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2 class="fonte-titulo">"Saboôr" baiano</h2>
+            <div class="redes">
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/5575999999999"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; Feito pelos alunos do IF Baiano.</p>
+        </div>
+    </footer>
+
+    <div id="modal-pagamento" class="modal-overlay">
+        <div class="modal-box">
+            <div id="loader" class="spinner"></div>
+            <i id="sucesso" class="fas fa-check-circle sucesso-icon"></i>
+            <h2 id="modal-texto">Processando o pedido...</h2>
+        </div>
+    </div>
+
+    <script src="agendamento.js"></script>
+    <script src="perfil.js"></script>
+
+</body>
+
+</html>
