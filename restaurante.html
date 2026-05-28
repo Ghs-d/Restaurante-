@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor da Bahia</title>
+    <link rel="stylesheet" href="restaurante.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container-header">
+            <div class="logo">
+                <i class="fa-solid fa-bowl-rice"></i>
+                <div class="texto-logo">
+                    <span style="display:block; font-size:0.8rem; color:#333; -webkit-text-stroke: 0;">Sabor da</span>
+                    <span>Bahia</span>
+                </div>
+            </div>
+
+            <nav>
+                <a href="/restaurante.html" class="ativo">Início</a>
+                <a href="/cardapio.html">Cardápio</a>
+                <a href="/agendamento.html">Pedido / Agendamento</a>
+                <a href="#" id="menu-perfil" onclick="abrirPerfilOuCard()">
+                    <i class="fa-solid fa-user"></i> <span id="texto-menu-perfil">Perfil</span>
+                </a>
+            </nav>
+
+            <div class="popup" id="popup">
+                <div class="popup-conteudo">
+                    <span class="fechar" onclick="fecharPerfil()">&times;</span>
+                    <h1>Cadastro Social</h1>
+                    <input type="text" id="nome" placeholder="Nome">
+                    <input type="text" id="telefone" placeholder="Telefone">
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="date" id="nascimento">
+                    <textarea id="bio" placeholder="Digite algo sobre você"></textarea>
+                    <input type="file" id="foto">
+                    <button onclick="criarPerfilCard()">Cadastrar</button>
+                </div>
+            </div>
+
+            <div class="overlay-perfil" id="overlayPerfil" onclick="fecharCardPerfil()"></div>
+
+            <div class="card-perfil" id="cardPerfil">
+                <span class="fechar" onclick="fecharCardPerfil()">&times;</span>
+                <img id="fotoPerfil" src="https://via.placeholder.com/130" alt="Foto">
+                <h2 id="nomePerfil"></h2>
+                <p id="telefonePerfil"></p>
+                <p id="emailPerfil"></p>
+                <p id="nascimentoPerfil"></p>
+                <p id="bioPerfil"></p>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="texto-banner">
+            <h1>O melhor da <br><span>Comida Baiana</span></h1>
+            <p>Tradição, sabor e aquele tempero que só a Bahia tem!</p>
+            <a class="bt1" href="/cardapio.html">VER CARDÁPIO</a>
+            <a class="bt2" href="/agendamento.html">FAZER PEDIDO</a>
+        </div>
+    </section>
+
+    <section class="historia">
+
+        <div class="texto h">
+
+            <h2>Um pouco da nossa história</h2>
+            <p>O Sabor da Bahia nasceu do amor pela nossa terra e pela nossa cultura.<br> Trazemos até você receitas
+                tradicionais feitas com ingredientes selecionados e muito carinho.</p>
+        </div>
+
+        <div class="imagem h">
+            <img src="https://img.restaurantguru.com/w550/h367/r655-Boteco-do-Pelourinho-interior-2022-09.jpg"
+                alt="imagem do restaurante no pelourinho salvador">
+        </div>
+
+    </section>
+
+    <section class="card">
+
+        <div class="card">
+            <h3>Receitas tradicionais</h3>
+            <p>Receitas passadas de <br> geração em geração.</p>
+        </div>
+
+
+        <div class="card">
+            <h3> ingredientes Selecionados</h3>
+            <p>Utilizamos os melhores<br>ingredientes da nossa terra.</p>
+        </div>
+
+        <div class="card">
+            <h3>Feito com amor</h3>
+            <p>cada prato é preparado<br>com carinho especial.</p>
+        </div>
+    </section>
+
+
+
+
+    <section class="info">
+
+        <div>
+            <h4>HORÁRIO DE FUNCIONAMENTO</h4>
+            <p>Terça e Domingo: 11h ás 22h</p>
+            <p>Segunda: Fechado</p>
+        </div>
+
+        <div>
+            <h4>ENDEREÇO</h4>
+            <p>Rua das cores,123</p>
+            <p>Pelourinho - Salvador/BA</p>
+        </div>
+
+        <div>
+            <h4>FALE CONOSCO</h4>
+            <p>(75) 99999-99999</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <h2 class="fonte-titulo">"Saboôr" baiano</h2>
+            <div class="redes">
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/5575999999999"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; Feito pelos alunos do IF Baiano.</p>
+        </div>
+    </footer>
+
+
+    <script src="perfil.js"></script>
+
+</body>
+
+</html>
