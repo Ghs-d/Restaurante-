@@ -1,10 +1,6 @@
 # Baiano restaurant
 
-![GitHub repo size](https://img.shields.io/github/repo-size/silas-andrade/sige-ifbaiano?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/silas-andrade/sige-ifbaiano?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/silas-andrade/sige-ifbaiano?style=for-the-badge)
-
-<img src="site-image.png" alt="Exemplo imagem">
+<img src="exemplo.png" alt="Exemplo imagem">
 
 ## 📋 Overview
 
